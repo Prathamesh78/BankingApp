@@ -27,9 +27,9 @@ pipeline {
        stage("Docker build"){
             steps {
 				sh 'docker version'
-				sh "docker build -t loksaieta/bankapp-eta-app:${BUILD_NUMBER} ."
+				sh "docker build -t prathamesh78/bankapp-ps-app:${BUILD_NUMBER} ."
 				sh 'docker image list'
-				sh "docker tag loksaieta/bankapp-eta-app:${BUILD_NUMBER} loksaieta/bankapp-eta-app:latest"
+				sh "docker tag prathamesh78/bankapp-ps-app:${BUILD_NUMBER} prathamesh78/bankapp-ps-app:latest"
             }
         }
 		stage('Login2DockerHub') {
