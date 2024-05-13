@@ -44,7 +44,7 @@ pipeline {
 				sh "docker push prathamesh78/bankapp-ps-app:latest"
 			}
 		}
-        stage('Deploy to Kubernetes Dev Environment') {
+        stage('Deploy to Kubernetes Environment') {
             steps {
 		script {
 		sshPublisher(publishers: [sshPublisherDesc(configName: 'Kubernetes', transfers: [sshTransfer(cleanRemote: false, excludes: '', execCommand: 'kubectl apply -f kubernetesdeploy.yaml', execTimeout: 120000, flatten: false, makeEmptyDirs: false, noDefaultExcludes: false, patternSeparator: '[, ]+', remoteDirectory: '.', remoteDirectorySDF: false, removePrefix: '', sourceFiles: '*.yaml')], usePromotionTimestamp: false, useWorkspaceInPromotion: false, verbose: false)])
