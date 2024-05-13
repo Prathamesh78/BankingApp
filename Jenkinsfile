@@ -41,7 +41,7 @@ pipeline {
 		stage('Push2DockerHub') {
 
 			steps {
-				sh "docker push loksaieta/bankapp-eta-app:latest"
+				sh "docker push prathamesh78/bankapp-ps-app:latest"
 			}
 		}
         stage('Deploy to Kubernetes Dev Environment') {
